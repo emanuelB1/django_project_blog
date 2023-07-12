@@ -2,3 +2,7 @@ benv/
 db.sqlite3
 .env
 .vscode/
+htmlcov
+.coverage
+*.md
+__pycache__
