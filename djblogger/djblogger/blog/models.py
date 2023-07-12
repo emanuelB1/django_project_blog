@@ -15,12 +15,12 @@ class Post(models.Model):
     slug = models.SlugField(max_length=250, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post_author")
     content = models.TextField()
-    create_at = models.DateTimeField(auto_now_add=True, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True, editable=False)
     uppdated_at = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=options, default="draft")
 
     class Meta:
-        ordering = ("-created_at",),
+        ordering = ("-created_at"),
     
     def __str__(self):
-        return self.name
+        return self.title
