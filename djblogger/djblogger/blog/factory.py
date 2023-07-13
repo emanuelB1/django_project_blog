@@ -24,3 +24,52 @@ class PostFactory(factory.django.DjangoModelFactory):
         return x 
     
     status = "published"
+
+    @factory.post_generation
+    def tags(self, create, extracted, **kwargs):
+        if not create:
+            return
+        if extracted:
+            self.tags.add(extracted)
+        else:
+            self.tags.add(
+                "Python",
+                "Django",
+                "Java",
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "C++",
+                "C#",
+                "Ruby",
+                "Ruby on Rails",
+                "Swift",
+                "Kotlin",
+                "PHP",
+                "Laravel",
+                "Go",
+                "Rust",
+                "TypeScript",
+                "Angular",
+                "React",
+                "Vue.js",
+                ".NET",
+                "Node.js",
+                "MySQL",
+                "PostgreSQL",
+                "MongoDB",
+                "AWS",
+                "Azure",
+                "Google Cloud",
+                "Docker",
+                "Kubernetes",
+                "Git",
+                "GitHub",
+                "Heroku",
+                "Unity",
+                "Unreal Engine",
+                "TensorFlow",
+                "PyTorch",
+                "Raspberry Pi",
+                "Arduino",
+            )
