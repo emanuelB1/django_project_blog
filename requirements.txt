@@ -6,6 +6,7 @@ colorama==0.4.6
 coverage==7.2.7
 Django==4.2.3
 django-htmx==1.16.0
+django-taggit==4.0.0
 factory-boy==3.2.1
 Faker==19.0.0
 flake8==6.0.0
