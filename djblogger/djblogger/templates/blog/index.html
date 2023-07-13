@@ -1,8 +1,7 @@
 {% extends "../base/base.html" %}
-{% block title %}
-Index Page
-{% endblock title %}
+{% block title %}Index Page{% endblock title %}
 
 {% block template %}
-<h1>Hola Emanuel </h1>
+{% include "../base/navbar.html" %}
+{% include "./components/splash.html" %}
 {% endblock template %}
