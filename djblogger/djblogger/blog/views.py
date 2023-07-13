@@ -1,5 +1,3 @@
-from typing import List
-
 from django.shortcuts import render
 from django.views.generic import ListView
 
@@ -15,6 +13,5 @@ class HomeView(ListView):
 
     def get_template_names(self):
         if self.request.htmx:
-            print("xxxxxxxx")
             return "blog/components/post-list-elements.html"
         return "blog/index.html"
