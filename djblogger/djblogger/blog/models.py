@@ -23,11 +23,11 @@ class Post(models.Model):
 
     tags = TaggableManager()
 
+    def get_absolute_url(self):
+        return reverse("post_single", args=[self.slug])
+    
     class Meta:
         ordering = ("-created_at",)
 
-    def get_absolute_url(self):
-        return reverse("post_single", args={self.slug})
-    
     def __str__(self):
         return self.title
