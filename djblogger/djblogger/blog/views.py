@@ -43,23 +43,31 @@ class PostTag(ListView):
         if self.request.htmx:
             return "blog/components/post-list-elements.html"
         return "blog/index.html"
+ 
     
 class SearchView(ListView):
     model = Post
     context_object_name = "posts"
     paginate_by = 10
+    template_name = "blog/search_results.html"
 
     def get_queryset(self):
         query = self.request.GET.get("q")
         if query:
-            return Post.objects.filter(
-                Q(title__icontains=query) |
+            title_results = Post.objects.filter(Q(title__icontains=query), status="published")
+            content_and_tags_results = Post.objects.filter(
                 Q(content__icontains=query) |
                 Q(tags__name__icontains=query) |
                 Q(author__username__icontains=query),
                 status="published"
             )
+
+            # Combine the title results and content/tags results into a list
+            results = list(title_results) + list(content_and_tags_results)
+            return results
+
         return Post.objects.none()
+        
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
