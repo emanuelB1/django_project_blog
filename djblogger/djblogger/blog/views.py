@@ -1,4 +1,6 @@
+from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
 from django.views.generic import ListView
 
 from .models import Post
@@ -41,3 +43,33 @@ class PostTag(ListView):
         if self.request.htmx:
             return "blog/components/post-list-elements.html"
         return "blog/index.html"
+    
+class SearchView(ListView):
+    model = Post
+    context_object_name = "posts"
+    paginate_by = 10
+
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        if query:
+            return Post.objects.filter(
+                Q(title__icontains=query) |
+                Q(content__icontains=query) |
+                Q(tags__name__icontains=query) |
+                Q(author__username__icontains=query),
+                status="published"
+            )
+        return Post.objects.none()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["search_query"] = self.request.GET.get("q")
+        return context
+
+    def get_template_names(self):
+        if self.request.htmx:
+            return "blog/components/post-list-elements.html"
+        return "blog/index.html"
+
+    def get_success_url(self):
+        return reverse("homepage")  # Redirige al homepage después de una búsqueda exitosa
