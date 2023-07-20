@@ -21,7 +21,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=options, default="draft")
-    image = models.ImageField(upload_to="post_images/", null=True, blank=True)
+    image = models.ImageField(upload_to="post_images/", null=True, blank=True)  # Hacer el campo de imagen nullable y en blanco
 
     tags = TaggableManager()
 
