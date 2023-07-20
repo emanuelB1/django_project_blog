@@ -47,3 +47,17 @@ body {
     }
 }
 
+.sun-icon {
+    display: none;
+}
+
+.moon-icon {
+    color: #111111;
+    font-size: 24px
+    
+}
+
+.moon-icon:hover {
+    text-shadow: 0 1px 1px rgba(120, 120, 120), 0 0 8px rgb(35, 35, 35);
+    
+}
