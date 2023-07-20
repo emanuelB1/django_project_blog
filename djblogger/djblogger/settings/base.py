@@ -61,7 +61,9 @@ TEMPLATES = [
                 'django.template.context_processors.csrf',
             ],
             "builtins":[
-                "djblogger.blog.templatetags.tag_cloud", "djblogger.blog.templatetags.markdown_processing",
+                "djblogger.blog.templatetags.tag_cloud", 
+                "djblogger.blog.templatetags.markdown_processing",
+                "djblogger.blog.templatetags.dark_mode_tags",
             ],
         },
     },

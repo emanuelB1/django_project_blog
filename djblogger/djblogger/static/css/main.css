@@ -1,3 +1,5 @@
+/* main.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
@@ -26,9 +28,7 @@ body {
 
 .fs-15 {
     font-size: 0.9375rem;
-    
 }
-
 
 .infscroll-title {
     font-size: 22px;
@@ -37,14 +37,13 @@ body {
 
 @media only screen and (max-width: 768px) {
     .infscroll-title {
-            font-size: 0.9375rem;
-            letter-spacing: -0.0px;
-        }
+        font-size: 0.9375rem;
+        letter-spacing: -0.0px;
+    }
+
     .infscroll-author,
     .infscroll-date {
-            font-size: 0.8125rem;
+        font-size: 0.8125rem;
     }
-     
-
-    
 }
+
