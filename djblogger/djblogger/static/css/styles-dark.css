@@ -128,7 +128,9 @@ body {
   background-color: #121212;
 }
 
-.navbar-toggler {
-  border-color: #424649 !important;
-  
+
+
+/* Estilos personalizados para el ícono de la hamburguesa */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='1' stroke-linecap='round' stroke-miterlimit='10' d='M1 2h14M1 8h14M1 14h14'/%3E%3C/svg%3E");
 }
