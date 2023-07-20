@@ -9,18 +9,19 @@ from taggit.managers import TaggableManager
 class Post(models.Model):
 
     options = (
-        {"draft", "Draft"},
-        {"published", "Published"},
+        ("draft", "Draft"),
+        ("published", "Published"),
     )
 
     title = models.CharField(max_length=250)
     subtitle = models.CharField(max_length=100)
     slug = AutoSlugField(populate_from="title", unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post_author")
-    content = models.TextField()
+    content = models.TextField()  # Usa models.TextField() en lugar de FroalaField
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
-    uppdated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=options, default="draft")
+    image = models.ImageField(upload_to="post_images/", null=True, blank=True)
 
     tags = TaggableManager()
 

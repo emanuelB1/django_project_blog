@@ -49,7 +49,6 @@ class SearchView(ListView):
     model = Post
     context_object_name = "posts"
     paginate_by = 10
-    template_name = "blog/search_results.html"
 
     def get_queryset(self):
         query = self.request.GET.get("q")
@@ -80,3 +79,4 @@ class SearchView(ListView):
 
     def get_success_url(self):
         return reverse("homepage")  # Redirige al homepage después de una búsqueda exitosa
+    
