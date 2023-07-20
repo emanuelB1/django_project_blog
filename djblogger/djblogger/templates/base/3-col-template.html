@@ -1,6 +1,5 @@
 {% extends "./base.html" %}
 {% block template %}
-
 <style>
     @media only screen and (min-width: 992px) {
         .col-navbar {
@@ -11,6 +10,7 @@
 </style>
 
 <div class="container" style="max-width: 1500px!important;">
+    {% include "./navbar.html" %}
     <div class="row">
         <div class="col col-navbar">{% block content-left %}{% endblock content-left %}</div>
         <div class="col-12 col-lg-8 pt-5 px-4 px-md-5">{% block content-mid %}{% endblock content-mid %}</div>

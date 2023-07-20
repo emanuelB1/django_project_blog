@@ -115,10 +115,20 @@ body {
 
 .sun-icon {
   color: #ffffff;
-  font-size: 24px
+  font-size: 24px;
+  margin-top: 10px;
   
 }
 
 .sun-icon:hover {
   text-shadow: 0 1px 1px rgb(245, 238, 238), 0 0 8px rgb(255, 255, 255);
+}
+
+.nav-principal {
+  background-color: #121212;
+}
+
+.navbar-toggler {
+  border-color: #424649 !important;
+  
 }
