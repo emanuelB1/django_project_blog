@@ -23,7 +23,7 @@
         // Obtener la posición del elemento al que se quiere desplazar (en este caso, el inicio de los posts)
         const postsSection = document.getElementById("start");
 
-        // Hacer scroll hacia el inicio de los posts con un pequeño ajuste hacia abajo (10 píxeles en este ejemplo)
+        // Hacer scroll hacia el inicio de los posts con un pequeño ajuste hacia abajo (20 píxeles en este ejemplo)
         const scrollOffset = 20; // Ajuste hacia abajo en píxeles
         const targetPosition = postsSection.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
         window.scrollTo({ top: targetPosition, behavior: "smooth" });
