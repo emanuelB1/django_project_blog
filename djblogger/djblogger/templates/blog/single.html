@@ -54,6 +54,13 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra para dar profundidad a las imágenes */
   }
 
+  .imagen-principal {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0; /* Agrega márgenes superior e inferior para separar las imágenes de otros elementos */
+    border-radius: 5px; /* Ajusta el radio de las esquinas del borde si lo deseas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra para dar profundidad a las imágenes */
+  }
 
    
 
@@ -66,7 +73,7 @@
     <h1 class="fw-bold pb-2">{{ post.title }}</h1>
     <h2 class="text-muted fs-4 pb-4">{{ post.subtitle }}</h2>
     {% if post.image %}
-        <img src="{{ post.image.url }}" class="img-fluid pb-3" alt="{{ post.title }}">
+        <img src="{{ post.image.url }}" class="img-fluid imagen-principal" alt="{{ post.title }}">
     {% endif %}
     <div class="post">{{ post.content | markdown | safe }}</div>
 </div>
