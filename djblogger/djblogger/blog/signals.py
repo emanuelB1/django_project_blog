@@ -11,6 +11,6 @@ from .models import Post, convert_image_to_webp
 @receiver(pre_save, sender=Post)
 def process_image(sender, instance, **kwargs):
     if instance.content and instance.image:
-        print("Transformando imagen a WebP...")
         instance.image = convert_image_to_webp(instance.image)
-        print("Imagen transformada correctamente.")
+       
+

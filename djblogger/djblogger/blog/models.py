@@ -43,7 +43,6 @@ def convert_image_to_webp(image):
     return image_webp
 
 
-
 class Post(models.Model):
 
     options = (
@@ -62,8 +61,6 @@ class Post(models.Model):
     image = models.ImageField(upload_to="post_images/", null=True, blank=True)  # Hacer el campo de imagen nullable y en blanco
 
     tags = TaggableManager()
-
-    image_webp = models.ImageField(upload_to="post_images_webp", blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if self.content and self.image:
