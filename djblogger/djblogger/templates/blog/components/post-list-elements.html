@@ -79,6 +79,9 @@
           {% if post.image %}
             <div class="thumbnail-container"> <!-- Agrega el div que envuelve la imagen -->
               <img src="{{ post.image.url }}" class="custom-thumbnail" alt="{{ post.title }}">
+                {% if post.image_webp %}
+                  <source srcset="{{ post.image_webp.url }}" type="image/webp">
+                {% endif %}
             </div>
           {% endif %}
         </div> 

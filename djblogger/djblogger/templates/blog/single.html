@@ -74,6 +74,9 @@
     <h2 class="text-muted fs-4 pb-4">{{ post.subtitle }}</h2>
     {% if post.image %}
         <img src="{{ post.image.url }}" class="img-fluid imagen-principal" alt="{{ post.title }}">
+        {% if post.image_webp %}
+                  <source srcset="{{ post.image_webp.url }}" type="image/webp">
+        {% endif %}
     {% endif %}
     <div class="post">{{ post.content | markdown | safe }}</div>
 </div>
@@ -100,6 +103,9 @@
                         <div class="col-3 p-0 m-0">
                             <div class="thumbnail-container m-0"> <!-- Agrega el div que envuelve la imagen -->
                                 <img src="{{ post.image.url }}" class="custom-thumbnail p-0 m-0" alt="{{ post.title }}">
+                                {% if post.image_webp %}
+                                    <source srcset="{{ post.image_webp.url }}" type="image/webp">
+                                {% endif %}
                             </div>
                         </div>
                         {% endif %}
