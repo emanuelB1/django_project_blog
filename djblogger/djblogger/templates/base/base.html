@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock title %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f35dcdb2d9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" id="theme-style">
+    <link rel="stylesheet" id="theme-style-dark">
+    {% load static %}
+    <script src="{% static 'js/htmx.min.js' %}" defer></script>
+    <script src="{% static 'js/htmx.js' %}" defer></script>
+    
+</head>
+
+<body>
+    
+    {% block template %}
+    {% endblock template %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var themeStyle = document.getElementById("theme-style");
+  var themeStyleDark = document.getElementById("theme-style-dark");
+
+  // Función para actualizar los enlaces
+  function updateThemeLinks(mode) {
+    if (mode === "dark") {
+      themeStyle.setAttribute("href", ""); // Establece el estilo claro
+      themeStyleDark.setAttribute("href", "{% static 'css/styles-dark.css' %}"); // Establece el estilo oscuro
+    } else {
+      themeStyleDark.setAttribute("href", ""); // Establece el estilo oscuro
+      themeStyle.setAttribute("href", "{% static 'css/main.css' %}"); // Establece el estilo claro
+    }
+  }
+
+  // Verifica el estado actual del modo oscuro en el almacenamiento local
+  var darkMode = localStorage.getItem("darkMode");
+  if (darkMode === "enabled") {
+    updateThemeLinks("dark");
+  } else {
+    updateThemeLinks("light");
+  }
+
+  document.getElementById("dark-mode-toggle").addEventListener("click", function() {
+    // Cambia el estado del modo oscuro en el almacenamiento local
+    var currentDarkMode = localStorage.getItem("darkMode");
+    if (currentDarkMode === "enabled") {
+      localStorage.setItem("darkMode", "disabled");
+      updateThemeLinks("light");
+    } else {
+      localStorage.setItem("darkMode", "enabled");
+      updateThemeLinks("dark");
+    }
+  });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous">
+</script>
+
+
+</body>
+</html>

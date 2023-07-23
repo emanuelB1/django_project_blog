@@ -1,0 +1,31 @@
+<div class="border-bottom border-1 border-dark">
+    <div class="container py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 py-1 py-md-5 text-center text-md-start">
+                    <h1 class="display-1">Tech Talk.</h1>
+                    <p class="fs-4 lh-1 text-muted fw-500 pb-5">
+                        No nonsense tutorials, tips, and expertise from writers on tech topics.
+                    </p>
+                    <button href="#start" type="button" class="btn btn-dark rounded-pill fw-500 fs-5 px-4" id="start-reading-btn">Start reading</button>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+
+<script>
+    // Agregar el evento de clic al botón "Start reading"
+    document.getElementById("start-reading-btn").addEventListener("click", function (event) {
+        // Prevenir el comportamiento predeterminado del enlace (evitar que la página se desplace al inicio)
+        event.preventDefault();
+
+        // Obtener la posición del elemento al que se quiere desplazar (en este caso, el inicio de los posts)
+        const postsSection = document.getElementById("start");
+
+        // Hacer scroll hacia el inicio de los posts con un pequeño ajuste hacia abajo (20 píxeles en este ejemplo)
+        const scrollOffset = 20; // Ajuste hacia abajo en píxeles
+        const targetPosition = postsSection.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+        window.scrollTo({ top: targetPosition, behavior: "smooth" });
+    });
+</script>

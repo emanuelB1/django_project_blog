@@ -1,0 +1,56 @@
+<style>
+  /* Estilos personalizados */
+#buscar {
+  background-color: #EFEFEF;
+}
+
+#buscar:focus {
+  border-color: black;
+  box-shadow: inset 0 1px 1px rgba(120, 120, 120), 0 0 8px rgba(180, 180, 180);
+}
+
+/* Ajustar margen entre los íconos y el botón de búsqueda */
+#dark-mode-toggle {
+  margin-left: 20px;
+  
+}
+</style>
+
+<nav class="nav-principal navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand logo fs-3" href="{% url 'homepage' %}">djblogger</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Tus elementos del menú aquí -->
+      </ul>
+      <form class="d-flex" action="{% url 'search' %}" method="GET">
+        <input id="buscar" class="form-control me-2 rounded-pill border-0" type="search" placeholder="Search" aria-label="Search" name="q">
+        <button class="btn btn-outline-dark rounded-pill" type="submit">Search</button>
+      </form>
+      <a href="#" aria-current="page" id="dark-mode-toggle">
+        <i class="sun-icon fas fa-sun"></i> <!-- Ícono de sol -->
+        <i class="moon-icon fas fa-moon"></i> <!-- Ícono de luna -->
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Función para cambiar el modo oscuro
+  function toggleDarkMode() {
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    darkModeToggle.classList.toggle("dark-mode-enabled");
+    darkModeToggle.classList.toggle("dark-mode-disabled");
+
+  }
+
+  // Escuchar el clic en el enlace de modo oscuro y cambiar el modo
+  document.getElementById("dark-mode-toggle").addEventListener("click", function () {
+    toggleDarkMode();
+  });
+
+  
+</script>
