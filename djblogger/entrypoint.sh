@@ -6,4 +6,4 @@ echo 'Applying migrations'
 python manage.py migrate --settings=djblogger.settings.production
 
 echo 'Runing server'
-gunicorn --env DJANGO_SETTINGS_MODULE=djblogger.settings.production djblogger.wsgi:application --bind 127.0.0.1:8000
+gunicorn --env DJANGO_SETTINGS_MODULE=djblogger.settings.production djblogger.wsgi:application --bind 0.0.0.0:$PORT
