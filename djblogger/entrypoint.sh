@@ -4,6 +4,7 @@ python manage.py collectstatic --no-input --settings=djblogger.settings.producti
 
 echo 'Applying migrations'
 python manage.py wait_for_db --settings=config.settings.production
+python manage.py makemigrations --settings=djblogger.settings.production
 python manage.py migrate --settings=djblogger.settings.production
 
 echo 'Runing server'
