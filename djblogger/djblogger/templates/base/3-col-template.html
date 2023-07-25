@@ -1,4 +1,13 @@
 {% extends "./base.html" %}
+{% block title %}{{ post.title|truncatechars:30 }}{% endblock title %}
+{% block meta_description %}
+    {{ post.title }} - {{ post.subtitle }} | lol101
+{% endblock meta_description %}
+{% block meta_keywords %}
+    {% for tag in post.tags.all %}
+        {{ tag.name }},
+    {% endfor %} | lol101
+{% endblock meta_keywords %}
 {% block template %}
 <style>
     @media only screen and (min-width: 992px) {
