@@ -1,12 +1,11 @@
 from time import sleep
-from typing import Any, Optional
 
 from django.core.management.base import BaseCommand
 from django.db import connection
 from django.db.utils import OperationalError
 
 
-class Comand(BaseCommand):
+class Command(BaseCommand):
     help = 'Wait for database connection'
 
     def handle(self, *args, **options):
@@ -19,7 +18,7 @@ class Comand(BaseCommand):
                 c.execute('SELECT 1')
                 db_conn = True
             except OperationalError:
-                self.stdout.write('Database unvaliable, waiting 1 second...')
+                self.stdout.write('Database unavailable, waiting 1 second...')
                 sleep(1)
-        
-        self.stdout.write(self.style.SUCCESS('Database created!'))
+
+        self.stdout.write(self.style.SUCCESS('Database available!'))
