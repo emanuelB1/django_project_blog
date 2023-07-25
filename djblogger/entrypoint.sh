@@ -7,5 +7,5 @@ python manage.py wait_for_db --settings=config.settings.production
 python manage.py migrate --settings=djblogger.settings.production
 
 echo 'Runing server'
-gunicorn --env DJANGO_SETTINGS_MODULE=djblogger.settings djblogger.wsgi:application --bind 0.0.0.0:$PORT
+gunicorn --env DJANGO_SETTINGS_MODULE=djblogger.settings.production djblogger.wsgi:application --bind 0.0.0.0:$PORT
 

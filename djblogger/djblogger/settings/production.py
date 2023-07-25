@@ -16,6 +16,7 @@ DATABASES = {
 
 STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles/')
 
+ROOT_URLCONF = 'djblogger.urls.production'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
