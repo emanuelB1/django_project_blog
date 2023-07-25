@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'imagekit',
     'django.contrib.sitemaps',
+    'apps.core',
     
 
     
