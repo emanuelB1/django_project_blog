@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+
+
+.logo {
+  font-family: 'Archivo', sans-serif;
+  letter-spacing: -1.5px;
+  color: white;
+}
+
+.logo:hover {
+  font-family: 'Archivo', sans-serif;
+  letter-spacing: -1.5px;
+  color: white;
+}
+
+html,
+body {
+  font-family: 'Barlow', sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+.fw-500 {
+  font-weight: 500;
+  color: #EFEFEF !important;
+}
+
+.fs-12 {
+  font-size: 0.75rem;
+}
+
+.fs-14 {
+  font-size: 0.875rem;
+}
+
+.fs-15 {
+  font-size: 0.9375rem;
+}
+
+.infscroll-title {
+  font-size: 22px;
+  letter-spacing: -0.6px;
+}
+
+@media only screen and (max-width: 768px) {
+  .infscroll-title {
+    font-size: 0.9375rem;
+    letter-spacing: -0.0px;
+  }
+
+  .infscroll-author,
+  .infscroll-date {
+    font-size: 0.8125rem;
+  }
+}
+
+.post-individual {
+  background-color: #121212;
+}
+
+.infscroll-title {
+  color: #EFEFEF !important;
+}
+
+.infscroll-author {
+  color: #EFEFEF !important;
+}
+
+.d-sm-block {
+  color: #EFEFEF !important;
+}
+
+.btn-dark {
+  background-color: #EFEFEF;
+  color: #121212 !important;
+}
+
+.btn-dark:hover {
+  background-color: #424649;
+  color: #ffffff !important;
+}
+
+.btn-outline-dark {
+  background-color: #EFEFEF;
+  color: #121212 !important;
+}
+
+.btn-outline-dark:hover {
+  background-color: #424649;
+  color: #ffffff !important;
+}
+
+.fs-4 {
+  color: #EFEFEF !important;
+}
+
+.row {
+  background-color: #121212;
+}
+
+.text-dark {
+  color: #ffffff !important;
+}
+
+.text-muted {
+  color: #EFEFEF !important;
+}
+
+.moon-icon {
+  display: none;
+}
+
+.sun-icon {
+  color: #ffffff;
+  font-size: 24px;
+  margin-top: 10px;
+  
+}
+
+.sun-icon:hover {
+  text-shadow: 0 1px 1px rgb(245, 238, 238), 0 0 8px rgb(255, 255, 255);
+}
+
+.nav-principal {
+  background-color: #121212;
+}
+
+
+
+/* Estilos personalizados para el ícono de la hamburguesa */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='1' stroke-linecap='round' stroke-miterlimit='10' d='M1 2h14M1 8h14M1 14h14'/%3E%3C/svg%3E");
+}
