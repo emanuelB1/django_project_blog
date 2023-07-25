@@ -13,6 +13,8 @@ DATABASES = {
     }
 }
 
+ROOT_URLCONF = 'djblogger.urls'
+
 STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles/')
 
 
