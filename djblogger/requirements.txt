@@ -42,3 +42,4 @@ soupsieve==2.4.1
 typing_extensions==4.7.1
 tzdata==2023.3
 webencodings==0.5.1
+whitenoise==6.5.0
