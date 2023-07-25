@@ -134,3 +134,4 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 IMAGEKIT_DEFAULT_CACHEFILE_BACKEND = 'imagekit.imagecache.NonValidatingImageCacheBackend'
+
