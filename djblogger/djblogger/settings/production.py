@@ -1,6 +1,11 @@
-from django.core.files.storage import FileSystemStorage
+import os
 
-from .base import *
+from dotenv import load_dotenv
+
+from djblogger.logging import *
+from djblogger.settings.base import *
+
+load_dotenv(Path.joinpath(BASE_DIR, '.env'))
 
 DEBUG = False
 SECRET_KEY = os.environ.get('SECRET_KEY')
