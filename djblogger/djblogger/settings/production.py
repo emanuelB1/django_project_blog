@@ -2,6 +2,8 @@ from django.core.files.storage import FileSystemStorage
 
 from .base import *
 
+DEBUG = False
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -13,9 +15,10 @@ DATABASES = {
     }
 }
 
-ROOT_URLCONF = 'djblogger.urls'
+
 
 STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles/')
+
 
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
