@@ -8,11 +8,6 @@ from djblogger.settings import base
 
 def main():
     """Run administrative tasks."""
-    if base.DEBUG:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djblogger.settings.local')
-    else:
-       os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djblogger.settings.production')
-    
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

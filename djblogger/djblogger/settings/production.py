@@ -13,6 +13,7 @@ DATABASES = {
     }
 }
 
+DEBUG = False
 
 STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles/')
 
