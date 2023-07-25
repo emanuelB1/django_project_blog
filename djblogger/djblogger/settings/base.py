@@ -53,7 +53,7 @@ MIDDLEWARE = [
 
 ]
 
-ROOT_URLCONF = 'djblogger.djblogger.urls'
+ROOT_URLCONF = 'djblogger.urls'
 
 TEMPLATES = [
     {
