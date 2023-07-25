@@ -3,6 +3,7 @@ from django.core.files.storage import FileSystemStorage
 from .base import *
 
 DEBUG = False
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DATABASES = {
     'default': {
