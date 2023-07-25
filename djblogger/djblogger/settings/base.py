@@ -34,8 +34,6 @@ INSTALLED_APPS = [
     'imagekit',
     'django.contrib.sitemaps',
     
-
-    
 ]
 
 MIDDLEWARE = [
