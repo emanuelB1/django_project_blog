@@ -2,7 +2,6 @@ from django.core.files.storage import FileSystemStorage
 
 from .base import *
 
-"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -13,14 +12,6 @@ DATABASES = {
         'PORT': os.environ.get('DB_PORT'),
     }
 }
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 
 STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles/')
 
