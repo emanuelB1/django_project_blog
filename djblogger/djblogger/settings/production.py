@@ -7,8 +7,7 @@ from djblogger.settings.base import *
 
 load_dotenv(Path.joinpath(BASE_DIR, '.env'))
 
-DEBUG = False
-SECRET_KEY = os.environ.get('SECRET_KEY')
+
 
 DATABASES = {
     'default': {
