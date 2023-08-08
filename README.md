@@ -20,7 +20,7 @@ Este proyecto es un blog implementado utilizando Django en el backend y Bootstra
 
 ## Instalación y Uso
 
-1. Clona este repositorio: `git clone https://github.com/tu-usuario/tu-repositorio.git`
+1. Clona este repositorio
 2. Ve a la carpeta del proyecto: `cd tu-repositorio`
 3. Crea y activa un entorno virtual (opcional pero recomendado).
 4. Instala las dependencias: `pip install -r requirements.txt`
